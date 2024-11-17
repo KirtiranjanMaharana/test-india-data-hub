@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
+import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
