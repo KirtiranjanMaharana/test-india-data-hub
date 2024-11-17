@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
-import Login from "./components/Login";
+import Login from "./pages/Login";
 
 const isAuthenticated = () => {
   return localStorage.getItem("indiaDataHubUser") !== null;
