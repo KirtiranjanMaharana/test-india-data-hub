@@ -42,7 +42,9 @@ const Login = () => {
     if (validate()) {
       console.log("Form submitted successfully:", formData);
       localStorage.setItem("indiaDataHubUser", JSON.stringify(formData));
-      navigate("/");
+      // navigate("/");
+      // somehow the navigate is not working on the live so i added the window command to navigate
+      window.location.href = "/";
     }
   };
 
