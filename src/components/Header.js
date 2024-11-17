@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
-export default function Header() {
+const isAuthenticated = () => {
+  return localStorage.getItem("indiaDataHubUser") !== null;
+};
+
+export default function Header({ handleLogout }) {
   return (
     <header className="bg-[#1C1564] px-4 py-2 text-white">
       <div className="container mx-auto flex justify-between items-center">
@@ -11,10 +15,18 @@ export default function Header() {
         />
         <nav className="space-x-9">
           <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="">About</Link>
+          <Link to="">Services</Link>
+          <Link to="">Contact</Link>
         </nav>
+        {isAuthenticated() && (
+          <button
+            onClick={handleLogout}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Logout
+          </button>
+        )}
       </div>
     </header>
   );

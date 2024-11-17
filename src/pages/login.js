@@ -41,8 +41,8 @@ const Login = () => {
     e.preventDefault();
     if (validate()) {
       console.log("Form submitted successfully:", formData);
+      localStorage.setItem("indiaDataHubUser", JSON.stringify(formData));
       navigate("/");
-      // Perform login logic here
     }
   };
 
